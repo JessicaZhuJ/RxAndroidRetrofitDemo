@@ -1,0 +1,21 @@
+项目采用MVP架构，网络通信使用retrofit、OKHTTP，butterKnife，dagger，rxjava
+使用Java 1.8
+目录结构：
+ app：存放application
+ di：dagger依赖注入框架的内容
+   component
+   modules
+   scopes
+ model、presenter、view：MVP架构
+  model:api
+        cache
+        db
+        entity
+        util
+  presenter:包含合同(contract)类和presenter
+        所有的contract类包含两个接口：presenter和view
+  view:activity
+       adapter
+       fragment
+       widget
+ util：包含所有工具类
