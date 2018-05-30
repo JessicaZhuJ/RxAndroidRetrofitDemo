@@ -4,7 +4,6 @@ import com.jing.rxandroiddemo.di.modules.LoginModule;
 import com.jing.rxandroiddemo.di.scopes.UserScope;
 import com.jing.rxandroiddemo.view.activity.LoginActivity;
 
-import javax.inject.Singleton;
 
 import dagger.Component;
 
