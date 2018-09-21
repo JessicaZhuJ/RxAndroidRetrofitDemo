@@ -5,15 +5,15 @@ package com.jing.rxandroiddemo.model.entity;
  * Created by Jessica on 2018/5/28.
  */
 public class BaseBean<T> {
-    private Integer errCode;
+    private int errCode;
     private String msg;
     private T data;
 
-    public Integer getErrCode() {
+    public int getErrCode() {
         return errCode;
     }
 
-    public void setErrCode(Integer errCode) {
+    public void setErrCode(int errCode) {
         this.errCode = errCode;
     }
 

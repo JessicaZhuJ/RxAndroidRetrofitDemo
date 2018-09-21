@@ -1,5 +1,6 @@
 package com.jing.rxandroiddemo.di.modules;
 
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.jing.rxandroiddemo.BuildConfig;
 import com.jing.rxandroiddemo.model.api.ApiService;
 import com.jing.rxandroiddemo.model.api.StringConverterFactory;
@@ -44,7 +45,8 @@ public class NetModule {
                 .baseUrl(Constant.BASE_URL)
                 .addConverterFactory(StringConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(EntityUtils.gson))
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())//rxJava 适配
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//rxjava2 适配
                 .build();
     }
 

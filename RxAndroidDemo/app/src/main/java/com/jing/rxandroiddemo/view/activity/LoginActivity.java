@@ -4,6 +4,7 @@ package com.jing.rxandroiddemo.view.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -18,17 +19,25 @@ import com.jing.rxandroiddemo.presenter.LoginPresenter;
 import com.jing.rxandroiddemo.util.Constant;
 import com.jing.rxandroiddemo.util.SPUtil;
 
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.BackpressureStrategy;
+import io.reactivex.Flowable;
+import io.reactivex.functions.LongConsumer;
+import rxtest.RxTest2;
+import rxtest.RxTest3;
 
 /**
  * Created by Jessica on 2018/5/28.
  */
 
 public class LoginActivity extends BaseActivity implements LoginContract.View {
+    private static final String TAG = "LoginActivity";
     @BindView(R.id.et_user)
     EditText etUser;
     @BindView(R.id.et_pwd)
@@ -44,6 +53,10 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        RxTest3 rxTest3 = new RxTest3();
+//        rxTest3.rxDemo();
+//        rxTest3.rxDemo0_Subscribe();
+        rxTest3.rxDemo1(this);
     }
 
 
@@ -107,7 +120,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     public void showMessage(String msg) {
-        runOnUiThread(() -> Toast.makeText(LoginActivity.this, msg, Toast.LENGTH_SHORT).show());
+       Toast.makeText(LoginActivity.this, msg, Toast.LENGTH_SHORT).show();
 
     }
 

@@ -6,7 +6,9 @@ package com.jing.rxandroiddemo.util;
 
 public class Constant {
 
-    public static final String BASE_URL = "http://192.168.1.99:8188/chqcontrol/";
+    //    public static final String BASE_URL = "http://192.168.1.99:8188/chqcontrol/";
+    public static final String BASE_URL = "http://117.27.142.42:1337/";
+
     public static final String KEY_ACCOUNT = "account";
     public static final String KEY_PASSWORD = "password";
     public static final String KEY_CHECKED = "checked";
